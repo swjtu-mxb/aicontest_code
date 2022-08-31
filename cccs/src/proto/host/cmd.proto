@@ -1,0 +1,112 @@
+syntax = "proto3";
+
+//run compress
+message CompressResult {
+  bytes data = 1;
+  bool last = 2;
+  uint32 width = 3;
+  uint32 height = 4;
+  string name = 5;
+  float time = 6;
+}
+
+message CompressCmd {
+  bool start = 1;
+}
+
+enum ImageEnum {
+  REMOTE_SENSING = 0;
+  LANDSLIDE = 1;
+  CAMERA = 2;
+}
+message ImageClass {
+  ImageEnum imgType = 1;
+}
+
+message PYNQEnableCmd {
+  bool enable = 1; 
+  uint32 idx = 2; 
+}
+
+message PYNQBitsCmd {
+  repeated uint32 idx = 1;
+  bytes bits = 2;
+}
+
+message LatticeBitsCmd{
+  bytes code = 1;  
+  bytes constrain = 2;
+}
+
+enum DeviceType{
+  CPU = 0;
+  PYNQ = 1;
+  NONE = 3;
+}
+
+message CmpDevice{
+  DeviceType type = 1;
+}
+
+message MonitorResponse{
+  repeated int32 position = 1; 
+}
+
+message MotorCmd{
+  int32 pitch = 1;
+  int32 yaw = 2;
+}
+
+service CompressService {
+  rpc RunCompress(CompressCmd) returns (stream CompressResult);
+
+  rpc setImage(ImageClass) returns (Empty);
+  rpc setContinue(Empty) returns (Empty);
+  rpc setNoContinue(Empty) returns (Empty);
+
+  // ultra96
+  // rpc enableAlwaysMonitor(Empty) returns (Empty);
+  // rpc disableAlwaysMonitor(Empty) returns (Empty);
+  rpc getMonitorResult(Empty) returns (YoloResponse);
+  rpc getMonitorImg(Empty) returns (YoloImg);
+
+  // set cpu or pynq
+  rpc setDevice(CmpDevice) returns (Empty);
+
+  // PYNQ
+  rpc setPYNQ(PYNQEnableCmd) returns (Empty);
+  rpc uploadPYNQ(PYNQBitsCmd) returns (Empty);
+  
+  // Lattice
+  rpc uploadLattice(LatticeBitsCmd) returns (Empty);
+
+  // motro
+  rpc setMotor(MotorCmd) returns (Empty);
+}
+
+message Empty {
+  bool isOK = 1;
+}
+
+// run yolov3
+
+message Yolov3Datain {
+  bytes cameraData = 1;
+  uint32 width = 2;
+  uint32 height = 3;
+}
+
+message YoloResponse{
+  repeated int32 position = 1;
+}
+
+message YoloImg{
+  bytes  data = 1;
+  uint32 width = 2;
+  uint32 height = 3;
+}
+
+service Yolov3Sevice {
+  rpc runyolov3(Yolov3Datain) returns (YoloResponse);
+  rpc getImage(Empty) returns (YoloImg);
+}

@@ -1,0 +1,16 @@
+**/__pycache__/
+**/checkpoints/
+**/.vscode/
+.vscode/
+**/*.o
+datas/ckpt
+datas/cmd/acad/.deps
+datas/cmd/acad/array
+datas/images/
+datas/datasets
+datas/tmp
+datas/result
+datas/camera
+tmp/
+cccs.code-workspace
+test_paint.py

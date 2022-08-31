@@ -1,0 +1,1 @@
+python tutorials/predict/change_detection/bit_predict.py --A ../LEVIR-CD/A/test_1.png --B ../LEVIR-CD/B/test_1.png --pre ./work/pre.png

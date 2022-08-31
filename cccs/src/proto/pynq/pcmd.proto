@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+message CnnResult {
+  bytes data = 1;
+}
+
+message CnnCmd {
+  bytes img = 1;
+}
+
+message DownloadsBitsCmd {
+  bytes bits = 1;
+}
+
+message RetStatus {
+  bool isOK = 1;
+}
+
+service PynqService {
+  rpc runCnn(CnnCmd) returns (CnnResult);
+  rpc downloadBits(DownloadsBitsCmd) returns (RetStatus);
+}

@@ -1,0 +1,15 @@
+./VOCdevkit/VOC2007/JPEGImages/5_4.jpg ./VOCdevkit/VOC2007/Annotations/5_4.xml
+./VOCdevkit/VOC2007/JPEGImages/14_1.jpg ./VOCdevkit/VOC2007/Annotations/14_1.xml
+./VOCdevkit/VOC2007/JPEGImages/19_2.jpg ./VOCdevkit/VOC2007/Annotations/19_2.xml
+./VOCdevkit/VOC2007/JPEGImages/13_2.jpg ./VOCdevkit/VOC2007/Annotations/13_2.xml
+./VOCdevkit/VOC2007/JPEGImages/1_1.jpg ./VOCdevkit/VOC2007/Annotations/1_1.xml
+./VOCdevkit/VOC2007/JPEGImages/4_2.jpg ./VOCdevkit/VOC2007/Annotations/4_2.xml
+./VOCdevkit/VOC2007/JPEGImages/19_5.jpg ./VOCdevkit/VOC2007/Annotations/19_5.xml
+./VOCdevkit/VOC2007/JPEGImages/29_3.jpg ./VOCdevkit/VOC2007/Annotations/29_3.xml
+./VOCdevkit/VOC2007/JPEGImages/22_3.jpg ./VOCdevkit/VOC2007/Annotations/22_3.xml
+./VOCdevkit/VOC2007/JPEGImages/13_5.jpg ./VOCdevkit/VOC2007/Annotations/13_5.xml
+./VOCdevkit/VOC2007/JPEGImages/11_3.jpg ./VOCdevkit/VOC2007/Annotations/11_3.xml
+./VOCdevkit/VOC2007/JPEGImages/23_2.jpg ./VOCdevkit/VOC2007/Annotations/23_2.xml
+./VOCdevkit/VOC2007/JPEGImages/7_4.jpg ./VOCdevkit/VOC2007/Annotations/7_4.xml
+./VOCdevkit/VOC2007/JPEGImages/22_2.jpg ./VOCdevkit/VOC2007/Annotations/22_2.xml
+./VOCdevkit/VOC2007/JPEGImages/6_4.jpg ./VOCdevkit/VOC2007/Annotations/6_4.xml
